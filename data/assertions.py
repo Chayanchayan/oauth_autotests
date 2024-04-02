@@ -1,5 +1,4 @@
 from playwright.sync_api import Page
-from data.environment import host
 from playwright.sync_api import expect
 from pages.base import Base
 
@@ -8,8 +7,8 @@ class Assertions(Base):
     def __init__(self, page: Page) -> None:
         super().__init__(page)
 
-    def check_URL(self, uri, msg):
-        expect(self.page).to_have_url(f"{host.get_base_url()}{uri}", timeout=10000), msg
+    def check_url(self, url, msg):
+        expect(self.page).to_have_url(url, timeout=10000), msg
 
     def has_text(self, locator, text: str, msg):  # элемент имеет текст
         loc = self.page.locator(locator)
