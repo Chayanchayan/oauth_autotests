@@ -1,6 +1,6 @@
 import time
 import pytest
-from pages.mock_login_page import MockLogin
+from pages.oauth_login_page import MockLogin
 
 
 @pytest.mark.smoke
