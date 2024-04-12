@@ -71,8 +71,6 @@ def get_context(browser, request, start) -> BrowserContext:
         context.set_default_timeout(
             timeout=request.config.getoption('t')
         )
-        # context.add_cookies([{'url': 'https://example.ru', 'name': 'ab_test', 'value': 'd'}]) добавляем куки,
-        # если нужны
         return context
 
     elif start == 'remote':
@@ -83,8 +81,6 @@ def get_context(browser, request, start) -> BrowserContext:
         context.set_default_timeout(
             timeout=request.config.getoption('t')
         )
-        # context.add_cookies([{'url': 'https://example.ru', 'name': 'ab_test', 'value': 'd'}]) добавляем куки,
-        # если нужны
         return context
 
 
