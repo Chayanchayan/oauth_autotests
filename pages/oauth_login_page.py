@@ -1,6 +1,6 @@
 from playwright.async_api import Page
 from constants import MockStudentData
-from locators.oauth_login_page import StudentLoginPage, BindAccountPage
+from locators.oauth_login_page_locators import StudentLoginPage, BindAccountPage
 from pages.base import Base
 from data.assertions import Assertions
 

@@ -1,3 +1,17 @@
+import os
+
+
+class Constants:
+    try:
+        key = os.getenv('API_KEY')
+    except KeyError:
+        print("API KEY wasn't found")
+
+
+class Providers:
+    STUDENT_PROVIDER = "mock-student"
+
+
 class TestData:
     MOCK_INPUT_DATA = "test"
     MOCK_LOGIN_PAGE = ("https://oauth-mock.stage-uchi.ru/mock-student/authorize?client_id=butler&nonce"

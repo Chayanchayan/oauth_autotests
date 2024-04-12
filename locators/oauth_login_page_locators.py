@@ -13,7 +13,3 @@ class StudentLoginPage:
 class BindAccountPage:
     BIND_BTN = ("#root > div.elements__Wrapper-sc-dgzvjg-1.jGJYus > div.elements__ButtonsBlock-sc-t6m4a-6.hTPHHS > "
                 "div.elements__Wrapper-sc-vh4jcd-0.bRUwwJ")
-
-# class MockLoginPage:
-#     USER_INPUT = "body > div > div > div > form > div:nth-child(4) > input"
-#     SIGN_IN_BTN = "body > div > div > div > form > button"
