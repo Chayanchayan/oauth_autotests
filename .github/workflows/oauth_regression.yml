@@ -2,9 +2,9 @@ name: OAuthRegression
 
 
 on:
-  #push: {}
-  schedule:
-    - cron: '0 22 * * *'
+  push: {}
+#  schedule:
+#    - cron: '0 22 * * *'
 
   workflow_dispatch:
     inputs:
