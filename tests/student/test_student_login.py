@@ -1,8 +1,9 @@
 import pytest
 from pages.oauth_login_page import MockLogin
 
-
 """https://app.qase.io/case/OAU-3"""
+
+
 @pytest.mark.regression
 @pytest.mark.parametrize("unbind_user", ["mock-student"], indirect=True)
 class TestMockStudentLogin:

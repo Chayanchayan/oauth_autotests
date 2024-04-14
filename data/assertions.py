@@ -51,7 +51,7 @@ class Assertions(Base):
         loc = self.page.locator(locator)
         expect(loc).to_be_empty(), msg
 
-    def contain_text(self, locator, text: str, msg):  # элемент содержит текст
+    def is_element_containing_text(self, locator, text: str, msg):  # элемент содержит текст
         loc = self.page.locator(locator)
         expect(loc).to_contain_text(text), msg
 
