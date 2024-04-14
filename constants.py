@@ -33,3 +33,4 @@ class MockStudentData:
                         "kZtb2NrLXN0dWRlbnQifQ.QbC4VEx15R6Av5qk3v24giPWvGP6_Icvmaj4zZ0qx3I")
     MOCK_STUDENT_USERNAME = "75"
     MOCK_STUDENT_PASSWORD = "схема33850"
+    MOCK_STUDENT_LK_URL = "https://core-main.stage-uchi.ru/profile/students"

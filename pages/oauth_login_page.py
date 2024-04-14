@@ -8,19 +8,22 @@ from data.assertions import Assertions
 class MockLogin(Base):
     def __init__(self, page: Page) -> None:
         super().__init__(page)
-        self.assertion = Assertions(page)
+        self.assertions = Assertions(page)
 
     def mock_student_login(self):
-        # открыть страницу логина
+        """Открыть страницу логина"""
         self.open(MockStudentData.MOCK_STUDENT_URL)
 
-        # заполнить данными все инпуты
+        """Заполнить данными все инпуты"""
         self.input(StudentLoginPage.LOGIN_INPUT, MockStudentData.MOCK_STUDENT_USERNAME)
         self.input(StudentLoginPage.PASSWORD_INPUT, MockStudentData.MOCK_STUDENT_PASSWORD)
 
-        # сабмит
+        """Сабмит"""
         self.click(StudentLoginPage.LOGIN_BTN)
 
-        # связать аккаунты
+        """Связать аккаунты"""
         self.click(BindAccountPage.BIND_BTN)
 
+    def is_on_student_lk(self):
+        """Проверка перехода в личный кабинет ученика"""
+        self.assertions.check_url(MockStudentData.MOCK_STUDENT_LK_URL, "We're not in student's lk!")
