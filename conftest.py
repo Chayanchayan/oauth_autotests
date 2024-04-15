@@ -4,7 +4,8 @@ load_dotenv()
 
 pytest_plugins = [
     'fixtures.page',
-    'fixtures.unbind_user'
+    'fixtures.unbind_user',
+    'fixtures.remove_rate_limit'
 ]
 
 
