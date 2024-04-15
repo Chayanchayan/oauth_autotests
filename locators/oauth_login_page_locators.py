@@ -12,7 +12,12 @@ class StudentLoginPage:
 class BindAccountPage:
     BIND_BTN = ("#root > div.elements__Wrapper-sc-dgzvjg-1.jGJYus > div.elements__ButtonsBlock-sc-t6m4a-6.hTPHHS > "
                 "div.elements__Wrapper-sc-vh4jcd-0.bRUwwJ")
+    OTHER_ACCOUNT_BTN = ("#root > div.elements__Wrapper-sc-dgzvjg-1.jGJYus > "
+                         "div.elements__ButtonsBlock-sc-t6m4a-6.hTPHHS > div.elements__Wrapper-sc-vh4jcd-0.evELAX")
 
 
-class IncorrectTokenPage:
-    INCORRECT_TOKEN_MESSAGE_BLOCK = "#root > div > div.elements__Inner-sc-1y21val-1.gSGKfD > div"
+class ErrorMessagePage:
+    ERROR_MESSAGE_BLOCK = "#root > div > div.elements__Inner-sc-1y21val-1.gSGKfD > div"
+    TEACHER_ROLE_MISMATCH_MESSAGE_BLOCK = "#root > div.elements__Wrapper-sc-f6eqiv-0.ieieOE > div > div"
+
+

@@ -46,6 +46,15 @@ class MockStudentData:
     MOCK_STUDENT_LK_URL = "https://core-main.stage-uchi.ru/profile/students"
 
 
+class MockTeacherData:
+    MOCK_TEACHER_USERNAME = "teacher1@uchi.ru"
+    MOCK_TEACHER_PASSWORD = "1"
+
+
 class IncorrectTokenData:
     INCORRECT_TOKEN_MESSAGE = ("Невозможно получить информацию по данному токену, попробуйте еще раз или обратитесь в "
                                "поддержку")
+
+
+class RoleMismatchData:
+    TEACHER_ROLE_MISMATCH_MESSAGE = "Вы авторизованы как учитель на Учи.ру"
