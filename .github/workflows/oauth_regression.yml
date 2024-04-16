@@ -2,7 +2,7 @@ name: OAuthRegression
 
 
 on:
-  push: {}
+#  push: {}
   schedule:
     - cron: '0 5 * * 1,2,3,4,5'
 

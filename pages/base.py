@@ -1,3 +1,5 @@
+import random
+
 from playwright.sync_api import Page, TimeoutError, Response, expect
 
 
@@ -146,3 +148,10 @@ class Base:
 
     def switch_to_main_frame(self):  # возврат на основной фрейм
         return self.page.main_frame
+
+    def select_random_dropdown_value(self, dropdown_locator, list_locator):
+        dropdown = self.page.locator(dropdown_locator)
+        dropdown.click()
+        options = self.page.locator(list_locator).all()
+        random_option = random.choice(options)
+        random_option.click()

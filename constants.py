@@ -1,4 +1,10 @@
 import os
+from russian_names import RussianNames
+
+from helpers import (generate_random_email,
+                     generate_random_phone_number)
+
+rn = RussianNames()
 
 
 class Constants:
@@ -41,9 +47,27 @@ class MockStudentData:
                                "nVsbCwiYXV0aG9yaXphdGlvbl91cmkiOiJodHRwczovL2NvcmUtbWFpbi1hdXRoLnN0YWdlLXVjaGkuc"
                                "nUvYXV0aC9vaWRjLXJwP2hvc3Q9aHR0cHMlM0ElMkYlMkZvYXV0aC1tb2NrLnN0YWdlLXVjaGkucnUlM"
                                "kZtb2NrLXN0dWRlbnQifQ.QbC4VEx15R6Av5qk3v24giPWvGP6_Icvmaj4zZ0qx3I")
-    MOCK_STUDENT_USERNAME = "75"
-    MOCK_STUDENT_PASSWORD = "схема33850"
+    MOCK_STUDENT_LOGIN_USERNAME = "75"
+    MOCK_STUDENT_LOGIN_PASSWORD = "схема33850"
     MOCK_STUDENT_LK_URL = "https://core-main.stage-uchi.ru/profile/students"
+    MOCK_STUDENT_REG_NAME = "Студент"
+    MOCK_STUDENT_REG_SURNAME = "Тестовый"
+
+
+class MockParentData:
+    MOCK_PARENT_URL = ("https://core-main-auth.stage-uchi.ru/oauth/connect?token=eyJhbGciOiJIUzI1NiJ9"
+                       ".eyJpZGVudGlmaWVyIjoic2QiLCJwcm92aWRlciI6Im1vY2stcGFyZW50IiwiaG9zdCI6Imh0dHBzOi"
+                       "8vb2F1dGgtbW9jay5zdGFnZS11Y2hpLnJ1L21vY2stcGFyZW50IiwicHJvdmlkZXJfbmFtZSI6ItCg0"
+                       "L7QtNC40YLQtdC70YzRgdC60LjQuSIsInByb3ZpZGVyX2Rlc2NyaXB0aW9uIjoi0KLQtdGB0YLQvtCy0"
+                       "YvQuSDQv9GA0L7QstCw0LnQtNC10YAuINCg0L7QtNC40YLQtdC70YwuIiwiYWNjb3VudF9pZCI6bnVs"
+                       "bCwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9jb3JlLW1haW4uc3RhZ2UtdWNoaS5ydSIsImVycm9yI"
+                       "jpudWxsLCJlcnJvcl9kZXNjcmlwdGlvbiI6bnVsbCwiZXJyb3JfdXJpIjpudWxsLCJhY2Nlc3NfdG9"
+                       "rZW4iOm51bGwsImF1dGhvcml6YXRpb25fdXJpIjoiaHR0cHM6Ly9jb3JlLW1haW4tYXV0aC5zdGFn"
+                       "ZS11Y2hpLnJ1L2F1dGgvb2lkYy1ycD9ob3N0PWh0dHBzJTNBJTJGJTJGb2F1dGgtbW9jay5zdGFn"
+                       "ZS11Y2hpLnJ1JTJGbW9jay1wYXJlbnQifQ.D7-iypA1ugRFYRprTU9gkfx096D0vXs95SFFuoHfs2A")
+    MOCK_PARENT_USERNAME = rn.get_person()
+    MOCK_PARENT_EMAIL = generate_random_email()
+    MOCK_PARENT_PHONE = generate_random_phone_number()
 
 
 class MockTeacherData:
