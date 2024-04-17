@@ -1,6 +1,6 @@
 import pytest
 
-from constants import IncorrectTokenData
+from constants import IncorrectData
 from locators.oauth_login_page_locators import ErrorMessagePage
 from pages.oauth_login_page import MockLogin
 
@@ -14,4 +14,4 @@ class TestMockStudentReceiveIncorrectToken:
         login = MockLogin(browser)
         login.mock_student_receive_incorrect_token()
         login.is_error_message_received(error_message_block=ErrorMessagePage.ERROR_MESSAGE_BLOCK,
-                                        error_message=IncorrectTokenData.INCORRECT_TOKEN_MESSAGE)
+                                        error_message=IncorrectData.INCORRECT_TOKEN_MESSAGE)

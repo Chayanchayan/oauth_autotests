@@ -8,7 +8,7 @@ from pages.oauth_login_page import MockLogin
 
 
 @pytest.mark.regression
-@pytest.mark.usefixtures('remove_rate_limit')
+@pytest.mark.usefixtures("remove_teacher_rate_limit")
 class TestMockStudentTeacherLogin:
     def test_mock_student_teacher_login(self, browser):
         login = MockLogin(browser)

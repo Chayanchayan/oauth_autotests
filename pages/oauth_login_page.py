@@ -1,6 +1,9 @@
+import random
+
 from playwright.async_api import Page
-from constants import MockStudentData, MockTeacherData
-from locators.oauth_login_page_locators import StudentLoginPage, BindAccountPage
+from constants import MockStudentData, MockTeacherData, MockParentData
+from locators.oauth_login_page_locators import GeneralLoginPage, BindAccountPage, ParentRegistraionPage, ParentLKPage, \
+    StudentRegistrationPage
 from pages.base import Base
 from data.assertions import Assertions
 
@@ -15,11 +18,11 @@ class MockLogin(Base):
         self.open(MockStudentData.MOCK_STUDENT_URL)
 
         """Заполнить данными студента все инпуты"""
-        self.input(StudentLoginPage.LOGIN_INPUT, MockStudentData.MOCK_STUDENT_USERNAME)
-        self.input(StudentLoginPage.PASSWORD_INPUT, MockStudentData.MOCK_STUDENT_PASSWORD)
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockStudentData.MOCK_STUDENT_LOGIN_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockStudentData.MOCK_STUDENT_LOGIN_PASSWORD)
 
         """Сабмит"""
-        self.click(StudentLoginPage.LOGIN_BTN)
+        self.click(GeneralLoginPage.LOGIN_BTN)
 
         """Связать аккаунты"""
         self.click(BindAccountPage.BIND_BTN)
@@ -29,11 +32,11 @@ class MockLogin(Base):
         self.open(MockStudentData.MOCK_STUDENT_URL)
 
         """Заполнить данными студента все инпуты"""
-        self.input(StudentLoginPage.LOGIN_INPUT, MockStudentData.MOCK_STUDENT_USERNAME)
-        self.input(StudentLoginPage.PASSWORD_INPUT, MockStudentData.MOCK_STUDENT_PASSWORD)
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockStudentData.MOCK_STUDENT_LOGIN_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockStudentData.MOCK_STUDENT_LOGIN_PASSWORD)
 
         """Сабмит"""
-        self.click(StudentLoginPage.LOGIN_BTN)
+        self.click(GeneralLoginPage.LOGIN_BTN)
 
         """Нажать 'Войти с другого аккаунта'"""
         self.click(BindAccountPage.OTHER_ACCOUNT_BTN)
@@ -43,11 +46,65 @@ class MockLogin(Base):
         self.open(MockStudentData.MOCK_STUDENT_URL)
 
         """Заполнить данными учителя все инпуты"""
-        self.input(StudentLoginPage.LOGIN_INPUT, MockTeacherData.MOCK_TEACHER_USERNAME)
-        self.input(StudentLoginPage.PASSWORD_INPUT, MockTeacherData.MOCK_TEACHER_PASSWORD)
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockTeacherData.MOCK_TEACHER_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockTeacherData.MOCK_TEACHER_PASSWORD)
 
         """Сабмит"""
-        self.click(StudentLoginPage.LOGIN_BTN)
+        self.click(GeneralLoginPage.LOGIN_BTN)
+
+    def mock_parent_registration(self):
+        """Открыть страницу логина"""
+        self.open(MockParentData.MOCK_PARENT_URL)
+
+        """Нажать 'У меня нет аккаунта Учи.ру'"""
+        self.click(ParentRegistraionPage.REG_BTN)
+
+        """Заполнить форму регистрации родителя"""
+        self.input(ParentRegistraionPage.NAME_INPUT, MockParentData.MOCK_PARENT_USERNAME)
+        self.input(ParentRegistraionPage.EMAIL_INPUT, MockParentData.MOCK_PARENT_EMAIL)
+
+        self.input(ParentRegistraionPage.PHONE_INPUT, MockParentData.MOCK_PARENT_PHONE)
+        self.click(ParentRegistraionPage.TERMS_CHECKBOX)
+
+        """Нажать 'Продолжить'"""
+        self.click(ParentRegistraionPage.CONTINUE_BTN)
+
+        """Связать аккаунты"""
+        self.click(BindAccountPage.BIND_BTN)
+
+    def mock_parent_student_registration(self):
+        """Нажать 'Зарегистрировать' в ЛК родителя"""
+        self.click(ParentLKPage.REGISTER_STUDENT_BTN)
+
+        """Нажать 'Добавить'"""
+        self.click(StudentRegistrationPage.ADD_BTN)
+
+        """Заполнить данными студента все инпуты"""
+        self.input(StudentRegistrationPage.NAME_INPUT, MockStudentData.MOCK_STUDENT_REG_NAME)
+        self.input(StudentRegistrationPage.SURNAME_INPUT, MockStudentData.MOCK_STUDENT_REG_SURNAME)
+        self.select_random_dropdown_value(StudentRegistrationPage.CLASS_DROPDOWN,
+                                          StudentRegistrationPage.CLASS_DROPDOWN_LIST)
+
+        """Продолжить"""
+        self.click(StudentRegistrationPage.CONTINUE_BTN)
+        self.click(StudentRegistrationPage.CONTINUE_BTN_2)
+
+    def mock_parent_with_several_student_login(self):
+        """Открыть страницу логина"""
+        self.open(MockStudentData.MOCK_STUDENT_URL)
+
+        """Заполнить данными родителя все инпуты"""
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockParentData.MOCK_PARENT_LOGIN_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockParentData.MOCK_PARENT_LOGIN_PASSWORD)
+
+        """Сабмит"""
+        self.click(GeneralLoginPage.LOGIN_BTN)
+
+        """Выбрать студента"""
+        self.click(GeneralLoginPage.ACTIVATE_BTN)
+
+        """Связать аккаунты"""
+        self.click(BindAccountPage.BIND_BTN)
 
     def mock_student_receive_incorrect_token(self):
         """Открыть страницу логина с неправильным токеном"""
