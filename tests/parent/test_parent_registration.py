@@ -1,5 +1,3 @@
-import time
-
 import pytest
 from pages.oauth_login_page import MockLogin
 

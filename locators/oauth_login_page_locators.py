@@ -1,4 +1,4 @@
-class StudentLoginPage:
+class GeneralLoginPage:
     LOGIN_INPUT = ("#root > div > div.elements__Inner-sc-qkv366-3.hfaFED > div.elements__FormBlock-sc-qkv366-7.laVQTg "
                    "> div.elements__Form-sc-qkv366-11.gwMeLT > div.elements__InputsBlock-sc-qkv366-12.bLGqSt > "
                    "div:nth-child(1) > input")
@@ -7,6 +7,8 @@ class StudentLoginPage:
                       "div.elements__InputsBlock-sc-qkv366-12.bLGqSt > div:nth-child(2) > input")
     LOGIN_BTN = ("#root > div > div.elements__Inner-sc-qkv366-3.hfaFED > div.elements__FormBlock-sc-qkv366-7.laVQTg > "
                  "div.elements__Form-sc-qkv366-11.gwMeLT > div.elements__ButtonBlock-sc-qkv366-13.hzHXdZ > div")
+    ACTIVATE_BTN = ("#root > div.elements__Wrapper-sc-dgzvjg-1.jGJYus > div.elements__Content-sc-z8pxd3-1.exqAQi > "
+                     "div:nth-child(1) > div.elements__AddButtonWrapper-sc-z8pxd3-13.heIZFp > div")
 
 
 class ParentRegistraionPage:
@@ -29,6 +31,10 @@ class ParentRegistraionPage:
     CONTINUE_BTN = ("#root > div.elements__Wrapper-sc-q0mz0x-0.ilrleB > div.elements__Content-sc-q0mz0x-1.bdGdwY > div "
                     "> div.elements__FormWrapper-sc-q0mz0x-3.kHqDHs > div.elements__Form-sc-1un0mz2-5.izZOAw > "
                     "div.elements__Wrapper-sc-vh4jcd-0.bRUwwJ")
+    EMAIL_ERROR_MESSAGE = ("#root > div.elements__Wrapper-sc-q0mz0x-0.ilrleB > "
+                           "div.elements__Content-sc-q0mz0x-1.bdGdwY > div > "
+                           "div.elements__FormWrapper-sc-q0mz0x-3.kHqDHs > div.elements__Form-sc-1un0mz2-5.izZOAw > "
+                           "div.elements__InputBlocks-sc-1un0mz2-6.eAXyfb > div:nth-child(2) > small")
 
 
 class ParentLKPage:

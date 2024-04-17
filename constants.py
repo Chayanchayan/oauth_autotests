@@ -65,6 +65,8 @@ class MockParentData:
                        "rZW4iOm51bGwsImF1dGhvcml6YXRpb25fdXJpIjoiaHR0cHM6Ly9jb3JlLW1haW4tYXV0aC5zdGFn"
                        "ZS11Y2hpLnJ1L2F1dGgvb2lkYy1ycD9ob3N0PWh0dHBzJTNBJTJGJTJGb2F1dGgtbW9jay5zdGFn"
                        "ZS11Y2hpLnJ1JTJGbW9jay1wYXJlbnQifQ.D7-iypA1ugRFYRprTU9gkfx096D0vXs95SFFuoHfs2A")
+    MOCK_PARENT_LOGIN_USERNAME = "parent271@uchi.ru"
+    MOCK_PARENT_LOGIN_PASSWORD = "1"
     MOCK_PARENT_USERNAME = rn.get_person()
     MOCK_PARENT_EMAIL = generate_random_email()
     MOCK_PARENT_PHONE = generate_random_phone_number()
@@ -75,9 +77,10 @@ class MockTeacherData:
     MOCK_TEACHER_PASSWORD = "1"
 
 
-class IncorrectTokenData:
+class IncorrectData:
     INCORRECT_TOKEN_MESSAGE = ("Невозможно получить информацию по данному токену, попробуйте еще раз или обратитесь в "
                                "поддержку")
+    EMAIL_IN_USE_ERROR = "Этот e-mail уже занят"
 
 
 class RoleMismatchData:

@@ -7,7 +7,10 @@ def generate_random_email():
     username = ''.join(random.choices(string.ascii_lowercase + string.digits, k=7))
 
     """Список доменов"""
-    domains = ['gmail.com', 'yahoo.com', 'hotmail.com', 'outlook.com']
+    domains = ['mail.ru', 'maill.ru',
+               'vk.ru', 'vkk.ru',
+               'rambler.ru', 'ramble.ru',
+               'yandex.ru', 'ya.ru']
 
     """Выбрать рандомный домен"""
     domain = random.choice(domains)
