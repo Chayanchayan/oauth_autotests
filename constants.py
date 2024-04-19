@@ -73,8 +73,28 @@ class MockParentData:
 
 
 class MockTeacherData:
+    MOCK_TEACHER_URL = ("https://core-main-auth.stage-uchi.ru/oauth/connect?token=eyJhbGciOiJIUzI1NiJ9"
+                        ".eyJpZGVudGlmaWVyIjoic2QiLCJwcm92aWRlciI6Im1vY2stdGVhY2hlciIsImhvc3QiOiJod"
+                        "HRwczovL29hdXRoLW1vY2suc3RhZ2UtdWNoaS5ydS9tb2NrLXRlYWNoZXIiLCJwcm92aWRlc"
+                        "l9uYW1lIjoi0KPRh9C40YLQtdC70YzRgdC60LjQuSIsInByb3ZpZGVyX2Rlc2NyaXB0aW9u"
+                        "Ijoi0KLQtdGB0YLQvtCy0YvQuSDQv9GA0L7QstCw0LnQtNC10YAuINCj0YfQuNGC0LXQu"
+                        "9GMLiIsImFjY291bnRfaWQiOm51bGwsInJlZGlyZWN0X3VyaSI6Imh0dHBzOi8vY29yZS"
+                        "1tYWluLnN0YWdlLXVjaGkucnUiLCJlcnJvciI6bnVsbCwiZXJyb3JfZGVzY3JpcHRpb24"
+                        "iOm51bGwsImVycm9yX3VyaSI6bnVsbCwiYWNjZXNzX3Rva2VuIjpudWxsLCJhdXRob3Jpe"
+                        "mF0aW9uX3VyaSI6Imh0dHBzOi8vY29yZS1tYWluLWF1dGguc3RhZ2UtdWNoaS5ydS9hdXRo"
+                        "L29pZGMtcnA_aG9zdD1odHRwcyUzQSUyRiUyRm9hdXRoLW1vY2suc3RhZ2UtdWNoaS5ydSU"
+                        "yRm1vY2stdGVhY2hlciJ9.Kt0xGJConRRU9z3IzM9wsxiyse84Yc-B61ppSbFeKDw")
     MOCK_TEACHER_USERNAME = "teacher1@uchi.ru"
     MOCK_TEACHER_PASSWORD = "1"
+    MOCK_TEACHER_NAME = "Учитель"
+    MOCK_TEACHER_SURNNAME = "Тестовый"
+    MOCK_TEACHER_PATRONYMIC = "Тестович"
+    MOCK_TEACHER_EMAIL = generate_random_email()
+    MOCK_TEACHER_PHONE = generate_random_phone_number()
+    MOCK_TEACHER_REG_PASSWORD = "123456789"
+    MOCK_TEACHER_STUDENT_NAME_INPUT = "Тестовый Ученик"
+    MOCK_TEACHER_LK_URL = "https://core-main.stage-uchi.ru/teachers/lk/main"
+    MOCK_TEACHER_CLASS_CODE_TEXT = "Код класса:"
 
 
 class IncorrectData:
@@ -85,3 +105,4 @@ class IncorrectData:
 
 class RoleMismatchData:
     TEACHER_ROLE_MISMATCH_MESSAGE = "Вы авторизованы как учитель на Учи.ру"
+    STUDENT_ROLE_MISMATCH_MESSAGE = "Вы авторизованы как ученик на Учи.ру"
