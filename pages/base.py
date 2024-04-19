@@ -13,6 +13,10 @@ class Base:
     def click(self, locator: str) -> None:  # клик, при необходимости сам делает скролл к нужному элементу
         self.page.click(locator)
 
+    def double_click(self, locator: str) -> None:  # двойной клик, при необходимости сам делает скролл к нужному
+        # элементу
+        self.page.dblclick(locator)
+
     def input(self, locator: str, data: str) -> None:  # ввод в поле
         self.page.locator(locator).fill(data)
 
@@ -148,6 +152,13 @@ class Base:
 
     def switch_to_main_frame(self):  # возврат на основной фрейм
         return self.page.main_frame
+
+    def select_first_dropdown_value(self, dropdown_locator, list_locator):
+        dropdown = self.page.locator(dropdown_locator)
+        dropdown.click()
+        options = self.page.locator(list_locator).all()
+        first_option = options[0]
+        first_option.click()
 
     def select_random_dropdown_value(self, dropdown_locator, list_locator):
         dropdown = self.page.locator(dropdown_locator)
