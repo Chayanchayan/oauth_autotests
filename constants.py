@@ -97,6 +97,28 @@ class MockTeacherData:
     MOCK_TEACHER_CLASS_CODE_TEXT = "Код класса:"
 
 
+class DoubleRoleData:
+    MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL = ("https://core-main-auth.stage-uchi.ru/oauth/connect?token"
+                                           "=eyJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoic2QiLCJwc"
+                                           "m92aWRlciI6Im1vY2stdGVhY2hlci1wYXJlbnQiLCJob3N0Ij"
+                                           "oiaHR0cHM6Ly9vYXV0aC1tb2NrLnN0YWdlLXVjaGkucnUvb"
+                                           "W9jay10ZWFjaGVyLXBhcmVudCIsInByb3ZpZGVyX25hbWUiOi"
+                                           "LQo9GH0LjRgtC10LvRjNGB0LrQuNC5L9GA0L7QtNC40YLQtdC70"
+                                           "YzRgdC60LjQuSIsInByb3ZpZGVyX2Rlc2NyaXB0aW9uIjoi0KLQt"
+                                           "dGB0YLQvtCy0YvQuSDQv9GA0L7QstCw0LnQtNC10YAuINCj0Y"
+                                           "fQuNGC0LXQu9GMLdGA0L7QtNC40YLQtdC70YwuIiwiYWNjb3V"
+                                           "udF9pZCI6bnVsbCwicmVkaXJlY3RfdXJpIjoiaHR0cHM6Ly9jb"
+                                           "3JlLW1haW4uc3RhZ2UtdWNoaS5ydSIsImVycm9yIjpudWxsLCJ"
+                                           "lcnJvcl9kZXNjcmlwdGlvbiI6bnVsbCwiZXJyb3JfdXJpIjpud"
+                                           "WxsLCJhY2Nlc3NfdG9rZW4iOm51bGwsImF1dGhvcml6YXRpb25f"
+                                           "dXJpIjoiaHR0cHM6Ly9jb3JlLW1haW4tYXV0aC5zdGFnZS11Y2"
+                                           "hpLnJ1L2F1dGgvb2lkYy1ycD9ob3N0PWh0dHBzJTNBJTJGJTJGb"
+                                           "2F1dGgtbW9jay5zdGFnZS11Y2hpLnJ1JTJGbW9jay10ZWFjaGVyL"
+                                           "XBhcmVudCJ9.CJi1uRWopV4gFaQcPwnbVoXjKX0aHyGFb12p9H-H-4Y")
+
+    MOCK_DOUBLE_ROLE_TEACHER_BLOCK_TEXT = "Аккаунт учителя"
+    MOCK_DOUBLE_ROLE_PARENT_BLOCK_TEXT = "Аккаунт родителя"
+
 class IncorrectData:
     INCORRECT_TOKEN_MESSAGE = ("Невозможно получить информацию по данному токену, попробуйте еще раз или обратитесь в "
                                "поддержку")
@@ -106,3 +128,4 @@ class IncorrectData:
 class RoleMismatchData:
     TEACHER_ROLE_MISMATCH_MESSAGE = "Вы авторизованы как учитель на Учи.ру"
     STUDENT_ROLE_MISMATCH_MESSAGE = "Вы авторизованы как ученик на Учи.ру"
+    PARENT_ROLE_MISMATCH_MESSAGE = "Вы авторизованы как родитель на Учи.ру"

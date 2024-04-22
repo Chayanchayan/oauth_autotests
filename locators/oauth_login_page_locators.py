@@ -129,11 +129,19 @@ class StudentRegistrationPage:
     CONTINUE_BTN_2 = "#root > div > div.styles__Content-sc-71sip2-1.jZpWyA > div > div > a > button"
 
 
+class DoubleRolePage:
+    FIRST_ROLE_BLOCK = ("#root > div.elements__Wrapper-sc-1rogjrj-0.dPIsRI > "
+                        "div.elements__RolePicker-sc-1rogjrj-2.imIENm > div:nth-child(1) > div")
+    SECOND_ROLE_BLOCK = ("#root > div.elements__Wrapper-sc-1rogjrj-0.dPIsRI > "
+                         "div.elements__RolePicker-sc-1rogjrj-2.imIENm > div:nth-child(2) > div")
+
+
 class BindAccountPage:
     BIND_BTN = ("#root > div.elements__Wrapper-sc-dgzvjg-1.jGJYus > div.elements__ButtonsBlock-sc-t6m4a-6.hTPHHS > "
                 "div.elements__Wrapper-sc-vh4jcd-0.bRUwwJ")
     OTHER_ACCOUNT_BTN = ("#root > div.elements__Wrapper-sc-dgzvjg-1.jGJYus > "
                          "div.elements__ButtonsBlock-sc-t6m4a-6.hTPHHS > div.elements__Wrapper-sc-vh4jcd-0.evELAX")
+    DOUBLE_ROLE_OTHER_ACCOUNT_BUTTON = "#root > div.elements__Wrapper-sc-f6eqiv-0.ieieOE > div > div > div:nth-child(5)"
 
 
 class ErrorMessagePage:

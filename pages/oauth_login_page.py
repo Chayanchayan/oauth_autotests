@@ -1,9 +1,8 @@
-import random
-
 from playwright.async_api import Page
-from constants import MockStudentData, MockTeacherData, MockParentData
-from locators.oauth_login_page_locators import GeneralLoginPage, BindAccountPage, ParentRegistrationPage, ParentLKPage, \
-    StudentRegistrationPage, TeacherRegistrationPage
+from constants import MockStudentData, MockTeacherData, MockParentData, DoubleRoleData
+from locators.oauth_login_page_locators import (GeneralLoginPage, BindAccountPage, ParentRegistrationPage,
+                                                ParentLKPage,
+    StudentRegistrationPage, TeacherRegistrationPage, DoubleRolePage)
 from pages.base import Base
 from data.assertions import Assertions
 
@@ -166,6 +165,34 @@ class MockLogin(Base):
         """Сабмит"""
         self.click(GeneralLoginPage.LOGIN_BTN)
 
+    def mock_double_role_parent_wrong_login(self):
+        """Открыть страницу логина"""
+        self.open(DoubleRoleData.MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL)
+
+        """Выбрать роль учителя"""
+        self.click(DoubleRolePage.FIRST_ROLE_BLOCK)
+
+        """Заполнить данными родителя все инпуты"""
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockParentData.MOCK_PARENT_LOGIN_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockParentData.MOCK_PARENT_LOGIN_PASSWORD)
+
+        """Сабмит"""
+        self.click(GeneralLoginPage.LOGIN_BTN)
+
+    def mock_double_role_teacher_wrong_login(self):
+        """Открыть страницу логина"""
+        self.open(DoubleRoleData.MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL)
+
+        """Выбрать роль родителя"""
+        self.click(DoubleRolePage.SECOND_ROLE_BLOCK)
+
+        """Заполнить данными родителя все инпуты"""
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockTeacherData.MOCK_TEACHER_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockTeacherData.MOCK_TEACHER_PASSWORD)
+
+        """Сабмит"""
+        self.click(GeneralLoginPage.LOGIN_BTN)
+
     def mock_parent_student_registration(self):
         """Нажать 'Зарегистрировать' в ЛК родителя"""
         self.click(ParentLKPage.REGISTER_STUDENT_BTN)
@@ -200,6 +227,61 @@ class MockLogin(Base):
         """Связать аккаунты"""
         self.click(BindAccountPage.BIND_BTN)
 
+    def check_mock_double_role_page(self):
+        """Открыть страницу логина"""
+        self.open(DoubleRoleData.MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL)
+
+    def mock_double_role_teacher_login(self):
+        """Открыть страницу логина"""
+        self.open(DoubleRoleData.MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL)
+
+        """Выбрать роль учителя"""
+        self.click(DoubleRolePage.FIRST_ROLE_BLOCK)
+
+        """Заполнить данными учителя все инпуты"""
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockTeacherData.MOCK_TEACHER_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockTeacherData.MOCK_TEACHER_PASSWORD)
+
+        """Сабмит"""
+        self.click(GeneralLoginPage.LOGIN_BTN)
+
+        """Связать аккаунты"""
+        self.click(BindAccountPage.BIND_BTN)
+
+    def mock_double_role_other_account_login(self):
+        """Открыть страницу логина"""
+        self.open(DoubleRoleData.MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL)
+
+        """Выбрать роль учителя"""
+        self.click(DoubleRolePage.FIRST_ROLE_BLOCK)
+
+        """Заполнить данными родителя все инпуты"""
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockParentData.MOCK_PARENT_LOGIN_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockParentData.MOCK_PARENT_LOGIN_PASSWORD)
+
+        """Сабмит"""
+        self.click(GeneralLoginPage.LOGIN_BTN)
+
+        """Нажать 'Войти с другого аккаунта'"""
+        self.click(BindAccountPage.DOUBLE_ROLE_OTHER_ACCOUNT_BUTTON)
+
+    def mock_double_role_parent_login(self):
+        """Открыть страницу логина"""
+        self.open(DoubleRoleData.MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL)
+
+        """Выбрать роль родителя"""
+        self.click(DoubleRolePage.SECOND_ROLE_BLOCK)
+
+        """Заполнить данными родителя все инпуты"""
+        self.input(GeneralLoginPage.LOGIN_INPUT, MockParentData.MOCK_PARENT_LOGIN_USERNAME)
+        self.input(GeneralLoginPage.PASSWORD_INPUT, MockParentData.MOCK_PARENT_LOGIN_PASSWORD)
+
+        """Сабмит"""
+        self.click(GeneralLoginPage.LOGIN_BTN)
+
+        """Связать аккаунты"""
+        self.click(BindAccountPage.BIND_BTN)
+
     def mock_student_receive_incorrect_token(self):
         """Открыть страницу логина с неправильным токеном"""
         self.open(MockStudentData.MOCK_STUDENT_BROKEN_URL)
@@ -220,6 +302,11 @@ class MockLogin(Base):
         """Проверка перехода на страницу авторизации учи.ру"""
         self.assertions.check_url(MockTeacherData.MOCK_TEACHER_URL, "We're not on teacher uchi.ru login page!")
 
+    def is_on_double_role_uchi_login(self):
+        """Проверка перехода на страницу авторизации учи.ру"""
+        self.assertions.check_url(DoubleRoleData.MOCK_DOUBLE_ROLE_TEACHER_PARENT_URL,
+                                  "We're not on double role uchi.ru login page!")
+
     def is_error_message_received(self, error_message_block, error_message):
         """Проверка получения сообщения о какой-либо ошибке"""
         self.assertions.is_element_containing_text(error_message_block, error_message,
@@ -229,3 +316,10 @@ class MockLogin(Base):
         """Проверка нахождения учителя на странице последнего добавленного класса"""
         self.assertions.has_text(TeacherRegistrationPage.CLASS_CODE_BLOCK, MockTeacherData.MOCK_TEACHER_CLASS_CODE_TEXT,
                                  "We're not in class page!")
+
+    def is_double_role_displayed(self, first_role, second_role):
+        """Проверка нахождения на странице с двойной ролью"""
+        self.assertions.has_text(DoubleRolePage.FIRST_ROLE_BLOCK, first_role,
+                                 "First role is not displayed!")
+        self.assertions.has_text(DoubleRolePage.SECOND_ROLE_BLOCK, second_role,
+                                 "Second role is not displayed!")
