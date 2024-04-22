@@ -78,7 +78,7 @@ class TeacherRegistrationPage:
                        "div.styles__SuggestContainer-sc-1kjzll4-0.hFfxzJ > div")
     FIRST_SCHOOL = ("#root > div:nth-child(2) > div > div > form > div:nth-child(3) > "
                     "div.styles__SuggestContainer-sc-1kjzll4-0.hFfxzJ > div.styles__Dropdown-sc-1kjzll4-3.iJobLi > "
-                    "div > div:nth-child(1)")
+                    "div > div:nth-child(2)")
     # SCHOOL_DROPDOWN_LIST = ("#root > div:nth-child(2) > div > div > form > div:nth-child(3) > "
     #                         "div.styles__SuggestContainer-sc-1kjzll4-0.hFfxzJ > "
     #                         "div.styles__Dropdown-sc-1kjzll4-3.iJobLi > div")
