@@ -43,8 +43,7 @@ jobs:
       - name: Install dependencies
         run: python3 -m pip install -r requirements.txt
       - run: |
-          if [ "${{github.event_name}}" = "schedule" ]; then
-            export args="-m regression --qase-mode testops" 
+          if [ "${{github.event_name}}" = "schedule" ]; then 
             export ENV="prod"
           else
             export ENV='${{github.event.inputs.environment}}'
