@@ -99,7 +99,6 @@ class MockLogin(Base):
         self.click(TeacherRegistrationPage.SCHOOL_DROPDOWN)
         # по какой-то причине обычный клик на школу не срабатывает и приходится кликать еще раз
         self.click(TeacherRegistrationPage.FIRST_SCHOOL)
-        self.click(TeacherRegistrationPage.FIRST_SCHOOL)
         self.click(TeacherRegistrationPage.REGION_CONTINUE_BTN)
 
         "Заполнить данные класса и перейти на следующий шаг"
