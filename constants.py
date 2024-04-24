@@ -93,7 +93,7 @@ class MockTeacherData:
     MOCK_TEACHER_PHONE = generate_random_phone_number()
     MOCK_TEACHER_REG_PASSWORD = "123456789"
     MOCK_TEACHER_STUDENT_NAME_INPUT = "Тестовый Ученик"
-    MOCK_TEACHER_LK_URL = "https://core-main.stage-uchi.ru/teachers/lk/main"
+    MOCK_TEACHER_LK_URL = "https://core-main.stage-uchi.ru/teachers/lk"
     MOCK_TEACHER_CLASS_CODE_TEXT = "Код класса:"
 
 
