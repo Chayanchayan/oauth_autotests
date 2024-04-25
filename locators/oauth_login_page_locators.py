@@ -147,4 +147,5 @@ class BindAccountPage:
 class ErrorMessagePage:
     ERROR_MESSAGE_BLOCK = ("#root > div.elements__Wrapper-sc-f6eqiv-0.ieieOE > div > div > "
                            "div.elements__Title-sc-f6eqiv-3.iWMCWu")
+    TOKEN_ERROR_MESSAGE_BLOCK = "#root > div > div.elements__Inner-sc-1y21val-1.gSGKfD > div"
     ROLE_MISMATCH_MESSAGE_BLOCK = "#root > div.elements__Wrapper-sc-f6eqiv-0.ieieOE > div > div"

@@ -119,6 +119,7 @@ class DoubleRoleData:
     MOCK_DOUBLE_ROLE_TEACHER_BLOCK_TEXT = "Аккаунт учителя"
     MOCK_DOUBLE_ROLE_PARENT_BLOCK_TEXT = "Аккаунт родителя"
 
+
 class IncorrectData:
     INCORRECT_TOKEN_MESSAGE = ("Невозможно получить информацию по данному токену, попробуйте еще раз или обратитесь в "
                                "поддержку")

@@ -13,5 +13,5 @@ class TestMockStudentReceiveIncorrectToken:
     def test_mock_student_receive_incorrect_token(self, browser, unbind_user):
         login = MockLogin(browser)
         login.mock_student_receive_incorrect_token()
-        login.is_error_message_received(error_message_block=ErrorMessagePage.ERROR_MESSAGE_BLOCK,
+        login.is_error_message_received(error_message_block=ErrorMessagePage.TOKEN_ERROR_MESSAGE_BLOCK,
                                         error_message=IncorrectData.INCORRECT_TOKEN_MESSAGE)
