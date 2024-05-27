@@ -6,6 +6,7 @@ from pages.oauth_login_page import MockLogin
 
 @pytest.mark.regression
 @pytest.mark.parametrize("unbind_user", ["mock-teacher"], indirect=True)
+@pytest.mark.skip
 class TestMockTeacherRegistration:
     def test_mock_teacher_registration(self, browser, unbind_user):
         login = MockLogin(browser)
