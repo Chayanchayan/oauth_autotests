@@ -315,9 +315,12 @@ class MockLogin(Base):
         self.assertions.has_text(TeacherRegistrationPage.CLASS_CODE_BLOCK, MockTeacherData.MOCK_TEACHER_CLASS_CODE_TEXT,
                                  "We're not in class page!")
 
-    def is_double_role_displayed(self, first_role, second_role):
-        """Проверка нахождения на странице с двойной ролью"""
+    def is_first_role_displayed(self, first_role):
+        """Проверка первой роли"""
         self.assertions.has_text(DoubleRolePage.FIRST_ROLE_BLOCK, first_role,
                                  "First role is not displayed!")
+
+    def is_second_role_displayed(self, second_role):
+        """Проверка первой роли"""
         self.assertions.has_text(DoubleRolePage.SECOND_ROLE_BLOCK, second_role,
                                  "Second role is not displayed!")
