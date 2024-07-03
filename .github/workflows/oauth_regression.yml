@@ -23,7 +23,7 @@ jobs:
     name: Regression tests
     runs-on: ubuntu-latest
     container:
-      image: mcr.microsoft.com/playwright/python:v1.44.0-jammy
+      image: mcr.microsoft.com/playwright/python:v1.45.0-jammy
     env:
       API_KEY: ${{ secrets.API_KEY_QA }}
       PROD_LOGIN1: ${{ secrets.PROD_LOGIN }}
