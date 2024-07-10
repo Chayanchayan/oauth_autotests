@@ -2,7 +2,7 @@ from playwright.async_api import Page
 from constants import MockStudentData, MockTeacherData, MockParentData, DoubleRoleData
 from locators.oauth_login_page_locators import (GeneralLoginPage, BindAccountPage, ParentRegistrationPage,
                                                 ParentLKPage,
-    StudentRegistrationPage, TeacherRegistrationPage, DoubleRolePage)
+                                                StudentRegistrationPage, TeacherRegistrationPage, DoubleRolePage)
 from pages.base import Base
 from data.assertions import Assertions
 
@@ -286,11 +286,11 @@ class MockLogin(Base):
 
     def is_on_student_lk(self):
         """Проверка перехода в личный кабинет ученика"""
-        self.assertions.check_url(MockStudentData.MOCK_STUDENT_LK_URL, "We're not in student's lk page!")
+        self.assertions.check_url(MockStudentData.MOCK_STUDENT_LK_URL, "We're not on student's lk page!")
 
     def is_on_teacher_lk(self):
         """Проверка перехода в личный кабинет учителя"""
-        self.assertions.check_url(MockTeacherData.MOCK_TEACHER_LK_URL, "We're not in teacher's lk page!")
+        self.assertions.check_url(MockTeacherData.MOCK_TEACHER_LK_URL, "We're not on teacher's lk page!")
 
     def is_on_student_uchi_login(self):
         """Проверка перехода на страницу авторизации учи.ру"""
@@ -313,14 +313,14 @@ class MockLogin(Base):
     def is_in_class_page(self):
         """Проверка нахождения учителя на странице последнего добавленного класса"""
         self.assertions.has_text(TeacherRegistrationPage.CLASS_CODE_BLOCK, MockTeacherData.MOCK_TEACHER_CLASS_CODE_TEXT,
-                                 "We're not in class page!")
+                                 "We're not on class page!")
 
-    def is_first_role_displayed(self, first_role):
+    def is_first_role_displayed(self):
         """Проверка первой роли"""
-        self.assertions.has_text(DoubleRolePage.FIRST_ROLE_BLOCK, first_role,
-                                 "First role is not displayed!")
+        self.assertions.check_presence(DoubleRolePage.FIRST_ROLE_BLOCK,
+                                       "First role is not displayed!")
 
-    def is_second_role_displayed(self, second_role):
-        """Проверка первой роли"""
-        self.assertions.has_text(DoubleRolePage.SECOND_ROLE_BLOCK, second_role,
-                                 "Second role is not displayed!")
+    def is_second_role_displayed(self):
+        """Проверка второй роли"""
+        self.assertions.check_presence(DoubleRolePage.SECOND_ROLE_BLOCK,
+                                       "Second role is not displayed!")
