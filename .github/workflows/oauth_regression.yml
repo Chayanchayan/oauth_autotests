@@ -50,4 +50,4 @@ jobs:
             export args='${{github.event.inputs.arguments}}'
           fi
             echo "::set-output name=env_name::${ENV:-prod}"
-            pytest ${args} --bn ${{ matrix.browser }} -v -s --testit .\tests\
+            pytest ${args} --bn ${{ matrix.browser }} -v -s --testit tests/
