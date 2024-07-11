@@ -8,7 +8,7 @@ class Assertions(Base):
         super().__init__(page)
 
     def check_url(self, url, msg):
-        expect(self.page).to_have_url(url, timeout=20000), msg
+        expect(self.page).to_have_url(url, timeout=10000), msg
 
     def has_text(self, locator, text: str, msg):  # элемент имеет текст
         loc = self.page.locator(locator)

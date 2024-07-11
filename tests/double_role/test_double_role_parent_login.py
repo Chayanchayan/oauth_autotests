@@ -1,11 +1,9 @@
 import pytest
-
-from constants import DoubleRoleData
+import testit
 from pages.oauth_login_page import MockLogin
 
-"""https://app.qase.io/case/OAU-32"""
 
-
+@testit.workItemIds(3628)
 @pytest.mark.regression
 @pytest.mark.usefixtures("remove_parent_rate_limit")
 @pytest.mark.parametrize("unbind_user", ["mock-teacher-parent"], indirect=True)

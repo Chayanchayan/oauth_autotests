@@ -1,12 +1,12 @@
 import pytest
+import testit
 
-from constants import DoubleRoleData, RoleMismatchData
+from constants import RoleMismatchData
 from locators.oauth_login_page_locators import ErrorMessagePage
 from pages.oauth_login_page import MockLogin
 
-"""https://app.qase.io/case/OAU-34"""
 
-
+@testit.workItemIds(3630)
 @pytest.mark.regression
 class TestDoubleRoleWrongTeacherLogin:
     def test_double_role_teacher_wrong_login(self, browser):

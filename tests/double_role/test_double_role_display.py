@@ -1,11 +1,9 @@
 import pytest
-
-from constants import DoubleRoleData
+import testit
 from pages.oauth_login_page import MockLogin
 
-"""https://app.qase.io/case/OAU-30"""
 
-
+@testit.workItemIds(3626)
 @pytest.mark.regression
 class TestDoubleRoleDisplayLogin:
     def test_double_role_display(self, browser):
