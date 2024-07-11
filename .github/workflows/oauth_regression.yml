@@ -28,7 +28,7 @@ jobs:
       API_KEY: ${{ secrets.API_KEY_QA }}
       PROD_LOGIN1: ${{ secrets.PROD_LOGIN }}
       PROD_PW1: ${{ secrets.PROD_PW }}
-      QASE_TOKEN: ${{ secrets.QS_TO_API_TOKEN }}
+      TEST_IT_TOKEN: ${{ secrets.TEST_IT_TOKEN }}
     strategy:
       matrix:
         browser: [remote_chrome]
