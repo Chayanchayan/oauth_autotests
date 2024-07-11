@@ -1,12 +1,11 @@
 import pytest
-
+import testit
 from constants import IncorrectData
 from locators.oauth_login_page_locators import ErrorMessagePage
 from pages.oauth_login_page import MockLogin
 
-"""https://app.qase.io/case/OAU-17"""
 
-
+@testit.workItemIds(3624)
 @pytest.mark.regression
 @pytest.mark.parametrize("unbind_user", ["mock-student"], indirect=True)
 class TestMockStudentReceiveIncorrectToken:

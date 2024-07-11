@@ -1,12 +1,9 @@
 import pytest
-
-from constants import DoubleRoleData, RoleMismatchData
-from locators.oauth_login_page_locators import ErrorMessagePage
+import testit
 from pages.oauth_login_page import MockLogin
 
-"""https://app.qase.io/case/OAU-35"""
 
-
+@testit.workItemIds(3631)
 @pytest.mark.regression
 @pytest.mark.parametrize("unbind_user", ["mock-teacher-parent"], indirect=True)
 class TestDoubleRoleOtherAccountLogin:

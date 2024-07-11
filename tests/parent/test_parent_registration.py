@@ -1,9 +1,9 @@
 import pytest
+import testit
 from pages.oauth_login_page import MockLogin
 
-"""https://app.qase.io/case/OAU-8"""
 
-
+@testit.workItemIds(3617)
 @pytest.mark.regression
 @pytest.mark.parametrize("unbind_user", ["mock-parent"], indirect=True)
 @pytest.mark.skip

@@ -1,11 +1,9 @@
-import time
-
 import pytest
+import testit
 from pages.oauth_login_page import MockLogin
 
-"""https://app.qase.io/case/OAU-11"""
 
-
+@testit.workItemIds(3619)
 @pytest.mark.regression
 @pytest.mark.parametrize("unbind_user", ["mock-student"], indirect=True)
 @pytest.mark.usefixtures("remove_parent_rate_limit")
