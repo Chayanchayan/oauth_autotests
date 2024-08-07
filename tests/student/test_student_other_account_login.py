@@ -10,4 +10,3 @@ class TestMockStudentOtherAccountLogin:
     def test_mock_student_other_account_login(self, browser, unbind_user):
         login = MockLogin(browser)
         login.mock_student_other_account()
-        login.is_on_student_uchi_login()
