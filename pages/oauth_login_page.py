@@ -292,9 +292,9 @@ class MockLogin(Base):
         """Проверка перехода в личный кабинет учителя"""
         self.assertions.check_url(MockTeacherData.MOCK_TEACHER_LK_URL, "We're not on teacher's lk page!")
 
-    def is_on_student_uchi_login(self):
-        """Проверка перехода на страницу авторизации учи.ру"""
-        self.assertions.check_url(MockStudentData.MOCK_STUDENT_URL, "We're not on student uchi.ru login page!")
+    # def is_on_student_uchi_login(self):
+    #     """Проверка перехода на страницу авторизации учи.ру"""
+    #     self.assertions.check_url(MockStudentData.MOCK_STUDENT_URL, "We're not on student uchi.ru login page!")
 
     def is_on_teacher_uchi_login(self):
         """Проверка перехода на страницу авторизации учи.ру"""

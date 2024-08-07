@@ -1,1 +1,1 @@
-[![OAuthRegression](https://github.com/Chayanchayan/oauth_autotests/actions/workflows/oauth_regression.yml/badge.svg)](https://github.com/Chayanchayan/oauth_autotests/actions/workflows/oauth_regression.yml)
+`[![OAuthRegression](https://github.com/Chayanchayan/oauth_autotests/actions/workflows/oauth_regression.yml/badge.svg)](https://github.com/Chayanchayan/oauth_autotests/actions/workflows/oauth_regression.yml)`
