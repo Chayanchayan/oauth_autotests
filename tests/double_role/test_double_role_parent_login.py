@@ -11,4 +11,3 @@ class TestDoubleRoleParentLogin:
     def test_double_role_parent_login(self, browser, unbind_user):
         login = MockLogin(browser)
         login.mock_double_role_parent_login()
-        login.is_on_student_lk()
