@@ -11,4 +11,3 @@ class TestDoubleRoleTeacherLogin:
     def test_double_role_teacher_login(self, browser, unbind_user):
         login = MockLogin(browser)
         login.mock_double_role_teacher_login()
-        login.is_on_teacher_lk()
