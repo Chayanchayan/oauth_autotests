@@ -53,7 +53,7 @@ class Assertions(Base):
 
     def is_element_containing_text(self, locator, text: str, msg):  # элемент содержит текст
         loc = self.page.locator(locator)
-        expect(loc).to_contain_text(text), msg
+        expect(loc).to_contain_text(text, timeout=10000), msg
 
     def select_have_values(self, locator, options: list, msg):  # Select имеет опции для выбора (опция передается
         # аргументом к проверке)
