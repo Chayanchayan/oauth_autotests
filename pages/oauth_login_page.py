@@ -3,7 +3,7 @@ from constants import MockStudentData, MockTeacherData, MockParentData, DoubleRo
 from locators.oauth_login_page_locators import (GeneralLoginPage, BindAccountPage, ParentRegistrationPage,
                                                 ParentLKPage,
                                                 StudentRegistrationPage, TeacherRegistrationPage, DoubleRolePage,
-                                                StudetnLKPage)
+                                                StudetnLKPage, TeacherLoginPage)
 from pages.base import Base
 from data.assertions import Assertions
 
@@ -299,7 +299,9 @@ class MockLogin(Base):
 
     def is_on_teacher_uchi_login(self):
         """Проверка перехода на страницу авторизации учи.ру"""
-        self.assertions.check_url(MockTeacherData.MOCK_TEACHER_URL, "We're not on teacher uchi.ru login page!")
+        self.assertions.has_text(TeacherLoginPage.GREETING_BLOCK,
+                                 MockTeacherData.MOCK_TEACHER_LOGIN_PAGE_GREETING_TEXT,
+                                 "We're not on teacher uchi.ru login page!")
 
     def is_on_double_role_uchi_login(self):
         """Проверка перехода на страницу авторизации учи.ру"""

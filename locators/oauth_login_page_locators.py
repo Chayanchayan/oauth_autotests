@@ -119,6 +119,11 @@ class StudetnLKPage:
     LK_USERNAME_HEADER = "#student-header-user-info-block-container"
 
 
+class TeacherLoginPage:
+    GREETING_BLOCK = ("#root > div > div.elements__Inner-sc-qkv366-3.hfaFED > "
+                      "div.elements__FormBlock-sc-qkv366-7.laVQTg > div.elements__Title-sc-qkv366-9.ldxQey")
+
+
 class StudentRegistrationPage:
     ADD_BTN = "#root > div > div.styles__Content-sc-71sip2-1.jZpWyA > div > div > div:nth-child(2) > div > button"
     NAME_INPUT = ("#root > div > div.styles__Content-sc-71sip2-1.jZpWyA > div > div > div > div > form > "
