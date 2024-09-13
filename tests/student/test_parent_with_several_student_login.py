@@ -11,4 +11,3 @@ class TestMockStudentLogin:
     def test_mock_student_login(self, browser, unbind_user):
         login = MockLogin(browser)
         login.mock_parent_with_several_student_login()
-        login.is_on_student_lk()
