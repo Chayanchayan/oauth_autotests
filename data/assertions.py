@@ -18,44 +18,11 @@ class Assertions(Base):
         loc = self.page.locator(locator)
         expect(loc).to_be_visible(visible=True, timeout=12000), msg
 
-    def check_absence(self, locator, msg):
-        loc = self.page.locator(locator)
-        expect(loc).to_be_hidden(timeout=700), msg
-
-    def check_equals(self, actual, expected, msg):
-        assert actual == expected, msg
-
-    def check_is_less_then(self, first, second, msg):
-        assert first < second, msg
-
-    def button_is_disabled(self, locator: str) -> bool:
-        button = self.page.query_selector(locator)
-        return button.is_disabled()
-
-    def check_url_content(self, uri, msg):
-        assert f"{uri}" in self.page.url, msg
-
-    def check_box_activated(self, locator, msg):  # проверка что чек бокс поставлен
-        loc = self.page.locator(locator)
-        expect(loc).to_be_checked(), msg
-
-    def element_disabled(self, locator, msg):  # веб элемент отключен
-        loc = self.page.locator(locator)
-        expect(loc).to_be_disabled(), msg
-
-    def to_be_editable(self, locator, msg):  # возможно редактировать
-        loc = self.page.locator(locator)
-        expect(loc).to_be_editable(), msg
-
-    def to_be_empty(self, locator, msg):  # web element пустой
-        loc = self.page.locator(locator)
-        expect(loc).to_be_empty(), msg
-
     def is_element_containing_text(self, locator, text: str, msg):  # элемент содержит текст
         loc = self.page.locator(locator)
         expect(loc).to_contain_text(text, timeout=10000), msg
 
-    def select_have_values(self, locator, options: list, msg):  # Select имеет опции для выбора (опция передается
+    def select_has_values(self, locator, options: list, msg):  # Select имеет опции для выбора (опция передается
         # аргументом к проверке)
         loc = self.page.locator(locator)
         loc.select_option(options)

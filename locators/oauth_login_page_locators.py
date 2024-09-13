@@ -115,6 +115,10 @@ class ParentLKPage:
     REGISTER_STUDENT_BTN = "#banner-add-child"
 
 
+class StudetnLKPage:
+    LK_USERNAME_HEADER = "#student-header-user-info-block-container"
+
+
 class StudentRegistrationPage:
     ADD_BTN = "#root > div > div.styles__Content-sc-71sip2-1.jZpWyA > div > div > div:nth-child(2) > div > button"
     NAME_INPUT = ("#root > div > div.styles__Content-sc-71sip2-1.jZpWyA > div > div > div > div > form > "

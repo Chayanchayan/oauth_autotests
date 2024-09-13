@@ -2,7 +2,8 @@ from playwright.async_api import Page
 from constants import MockStudentData, MockTeacherData, MockParentData, DoubleRoleData
 from locators.oauth_login_page_locators import (GeneralLoginPage, BindAccountPage, ParentRegistrationPage,
                                                 ParentLKPage,
-                                                StudentRegistrationPage, TeacherRegistrationPage, DoubleRolePage)
+                                                StudentRegistrationPage, TeacherRegistrationPage, DoubleRolePage,
+                                                StudetnLKPage)
 from pages.base import Base
 from data.assertions import Assertions
 
@@ -286,7 +287,7 @@ class MockLogin(Base):
 
     def is_on_student_lk(self):
         """Проверка перехода в личный кабинет ученика"""
-        self.assertions.check_url(MockStudentData.MOCK_STUDENT_LK_URL, "We're not on student's lk page!")
+        self.assertions.check_presence(StudetnLKPage.LK_USERNAME_HEADER, "We're not on student's lk page!")
 
     def is_on_teacher_lk(self):
         """Проверка перехода в личный кабинет учителя"""
